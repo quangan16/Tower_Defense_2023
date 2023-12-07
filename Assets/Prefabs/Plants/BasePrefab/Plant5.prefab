@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5828199844253460675
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 773183254625117797, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: plantBase
+      value: 
+      objectReference: {fileID: 6829048877287213745}
+    - target: {fileID: 3705358950638372915, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: plantBase
+      value: 
+      objectReference: {fileID: 6829048877287213745}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747938911229209187, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_Name
+      value: Plant5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+--- !u!114 &2875806599323650142 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8577393822753874077, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+  m_PrefabInstance: {fileID: 5828199844253460675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269573357980910240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0e808645ff09545861ff77b7ad3da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7269573357980910240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3747938911229209187, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+  m_PrefabInstance: {fileID: 5828199844253460675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6829048877287213745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269573357980910240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc65023e6b6ebaf42850e8fff59314cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  namePlant: plant5
+  index: 4
+  atk: 0
+  attackSpeed: 0
+  range: 0
+  objRange: {fileID: 0}
+  fireCountdown: 0
+  target: {fileID: 0}
+  partToRotate: {fileID: 0}
+  turnSpeed: 0
+  firePoint: {fileID: 0}
+  enemies: []
+  indexBulletPrefab: 4
+  level: 0
+  smokeBullet: {fileID: 0}
+  posGrid: {fileID: 0}
+  uiPlantPrefab: {fileID: 0}
+  ui: {fileID: 0}
+  animationPlant: {fileID: 2875806599323650142}

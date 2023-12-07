@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0935b1a74f495d347a2734b85c3be0fb, type: 3}
+  m_Name: PurseofGems
+  m_EditorClassIdentifier: 
+  title: Purse of Gems
+  amount: 1200
+  price: 159000
+  icon: {fileID: 21300000, guid: f08b1b00bfee2b048999f2bb4a4c1b55, type: 3}
