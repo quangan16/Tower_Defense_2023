@@ -15,7 +15,7 @@ MonoBehaviour:
   namePlant: Pea Shooter
   popularLevel: Common
   description: Single target. Balance power.
-  icon: {fileID: 21300000, guid: 7647e5a70c96b6b47b237e3bac6bff05, type: 3}
+  icon: {fileID: 21300000, guid: 80f941cc1cbdbee4fb54f666b6f08dd2, type: 3}
   level: 1
   atk: 100
   attackSpeed: 1.5

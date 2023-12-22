@@ -6,7 +6,7 @@ public class Bullet01 : Bullet
 {
     private void FixedUpdate()
     {
-        if(enemyMovement != null)
+        if(enemyController != null)
         FollowTarget();
     }
 }

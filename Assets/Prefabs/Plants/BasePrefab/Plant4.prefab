@@ -7,21 +7,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 327013311119287849, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: -5620559400371217893}
     - target: {fileID: 3285750945799012153, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3705358950638372915, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: plantBase
@@ -65,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalPosition.z
@@ -124,9 +132,13 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8577393822753874077, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577393822753874077, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: smokeBullet
       value: 
-      objectReference: {fileID: 9041180703351303186}
+      objectReference: {fileID: 6937690330190710799}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
 --- !u!114 &2875806599323650142 stripped
@@ -140,6 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0e808645ff09545861ff77b7ad3da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &4249697605052543096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7644888497941829819, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+  m_PrefabInstance: {fileID: 5828199844253460675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6169590614465549545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
@@ -164,24 +181,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   namePlant: plant4
   index: 3
-  atk: 0
-  attackSpeed: 0
+  atk: 20
+  attackSpeed: 0.6
   range: 2.5
-  objRange: {fileID: 0}
+  objRange: {fileID: 8979396953281427979}
   fireCountdown: 0
   target: {fileID: 0}
-  partToRotate: {fileID: 0}
-  turnSpeed: 0
-  firePoint: {fileID: 0}
+  partToRotate: {fileID: 6169590614465549545}
+  turnSpeed: 10
+  firePoint: {fileID: 4249697605052543096}
   enemies: []
   indexBulletPrefab: 3
   level: 0
+  objBullet: {fileID: 0}
   posGrid: {fileID: 0}
-  uiPlantPrefab: {fileID: 0}
+  uiPlantPrefab: {fileID: 1228821022540261107, guid: e24f6292bf278a44faa365005796bcf4, type: 3}
   ui: {fileID: 0}
   animationPlant: {fileID: 2875806599323650142}
   bulletBezier: {fileID: 3712608477431111023}
-  prefab: {fileID: 4315361421859262521, guid: c92399ab5fd04b4449d6cb9c757b94a7, type: 3}
+  bulletPrefab: {fileID: 7194610775698375296, guid: 4f3046b0dfd97974bab485d4c756f5d5, type: 3}
 --- !u!114 &3712608477431111023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,9 +221,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
   m_PrefabInstance: {fileID: 5828199844253460675}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &9041180703351303186 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3285750945818346705, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+--- !u!1 &8979396953281427979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3205671322380571336, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
   m_PrefabInstance: {fileID: 5828199844253460675}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8680871442482487235
@@ -217,7 +235,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5263490559746283244, guid: 4d2271c9a87a22a4c9b9d7a9753a24b5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5263490559746283244, guid: 4d2271c9a87a22a4c9b9d7a9753a24b5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -265,3 +283,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d2271c9a87a22a4c9b9d7a9753a24b5, type: 3}
+--- !u!198 &6937690330190710799 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1747121830708008908, guid: 4d2271c9a87a22a4c9b9d7a9753a24b5, type: 3}
+  m_PrefabInstance: {fileID: 8680871442482487235}
+  m_PrefabAsset: {fileID: 0}

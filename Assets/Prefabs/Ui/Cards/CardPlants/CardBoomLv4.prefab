@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4b383259076c3ae4f9afee9e9ced37b2, type: 3}
+    - target: {fileID: 3993589414838123156, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5307263886908117869, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
       propertyPath: id
       value: plant3

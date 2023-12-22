@@ -17,6 +17,6 @@ MonoBehaviour:
   description: Attack five direct within range.
   icon: {fileID: 21300000, guid: 9ef9c14f266d6354ca400e1f0a3654f6, type: 3}
   level: 1
-  atk: 100
+  atk: 50
   attackSpeed: 1.5
-  range: 2
+  range: 1

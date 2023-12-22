@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
@@ -11,10 +12,11 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth;
     public TextMeshProUGUI healthText;
     public Slider healthSlider;
+    public EnemyController enemyController;
     public bool takeDamage = false;
-    public EnemyMovement enemyMovement;
     public EnemyAnimation enemyAnimation;
     public EnemyState enemyState;
+    public BoxCollider boxCollider;
 
     public virtual void OnEnable()
     {
@@ -25,10 +27,11 @@ public class EnemyHealth : MonoBehaviour
     {
         healthText.gameObject.SetActive(true);
         int maxHealth1 = GameManager.Instance.waveCount * maxHealth;
+        boxCollider.enabled = true;
         SetMaxHealth(maxHealth1);
     }
 
-    public void SetMaxHealth(int value)
+    public virtual void SetMaxHealth(int value)
     {
         health = value;
         healthSlider.maxValue = value;
@@ -47,16 +50,15 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void UpdateHealthBar()
+    public virtual void UpdateHealthBar()
     {
-        Debug.Log("cc");
         healthSlider.DOValue(health, 0.2f);
       
     }
 
     public void TakeDamage(int damage, int index)
     {
-        if (!enemyMovement.dead)
+        if (!enemyController.dead)
         {
             health -= damage;
             enemyAnimation.blinkTimer = enemyAnimation.blinkDuration;
@@ -66,11 +68,12 @@ public class EnemyHealth : MonoBehaviour
             enemyAnimation.CreateVfx(index);
             if (health <= 0)
             {
-                enemyMovement.dead = true;
+                enemyController.dead = true;
                 healthText.gameObject.SetActive(false);
                 enemyAnimation.ChangeStateAnimation("die", 0.25f, 0, 0);
                 GameManager.Instance.enemySpawned.Remove(gameObject);
-                DOVirtual.DelayedCall(2, () => { enemyMovement.SetDead(); });
+                boxCollider.enabled = false;
+                DOVirtual.DelayedCall(2, () => { enemyController.SetDead(); });
             }
 
         }
@@ -94,10 +97,10 @@ public class EnemyHealth : MonoBehaviour
 
         // Start the new OnPoinsoned coroutine and store its reference
         poisonCoroutine = StartCoroutine(OnPoisoned(poisonDamage, index, duration));
-        Debug.Log("occc");
+ 
         yield return new WaitForSeconds(3.0f);
         
-        Debug.Log("obbb");
+       
         enemyAnimation.OnNormal();
         enemyState = EnemyState.NORMAL;
     }
@@ -106,7 +109,7 @@ public class EnemyHealth : MonoBehaviour
     {
         while (true)
         {
-            if (enemyState == EnemyState.POISONED && !enemyMovement.dead)
+            if (enemyState == EnemyState.POISONED && !enemyController.dead)
             {
 
 
@@ -119,11 +122,11 @@ public class EnemyHealth : MonoBehaviour
 
                 if (health <= 0)
                 {
-                    enemyMovement.dead = true;
+                    enemyController.dead = true;
                     healthText.gameObject.SetActive(false);
                     enemyAnimation.ChangeStateAnimation("die", 0.25f, 0, 0);
                     GameManager.Instance.enemySpawned.Remove(gameObject);
-                    DOVirtual.DelayedCall(2, () => { enemyMovement.SetDead(); });
+                    DOVirtual.DelayedCall(2, () => { enemyController.SetDead(); });
                     yield break;
                 }
 

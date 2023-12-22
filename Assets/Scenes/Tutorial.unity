@@ -4244,11 +4244,13 @@ MonoBehaviour:
   - enemies: 01000000
     gates: 0101
   isFighting: 0
+  spawnRate: 1
   coin: 10
   live: 30
   maxLive: 0
   countEnemyExcept: 0
   countEnemySpawned: 0
+  enemySpawned: []
 --- !u!1001 &311381289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5890,7 +5892,7 @@ MonoBehaviour:
     count: 0
     actives: []
   - name: 
-    go: {fileID: 2490752461469309657, guid: 29610cfdc3214be49971d9b0e3b8c02c, type: 3}
+    go: {fileID: 2490752461469309657, guid: 5c59e08e7f74ba042ae432ccd2e77723, type: 3}
     count: 0
     actives: []
   - name: 

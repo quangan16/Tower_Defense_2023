@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Bullet04 : Bullet
 {
+    public float slowRate;
+    public float slowDuration;
     private void OnEnable()
     {
         target = null;
@@ -20,7 +22,10 @@ public class Bullet04 : Bullet
         {
             other.gameObject.GetComponent<EnemyHealth>().TakeDamage(atk, 1);
             other.gameObject.GetComponent<EnemyHealth>().takeDamage = true;
+            other.gameObject.GetComponent<EnemyController>().GetSlowed(1 - slowRate, slowDuration);
             ObjectPool.instance.Return(gameObject);
         }
     }
+
+
 }

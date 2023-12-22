@@ -258,6 +258,7 @@ public class PathFinding : MonoBehaviour
                 GameManager gameManager = GameManager.Instance;
                 if (gameManager.waves[gameManager.waveCount - 1].gates[i])
                 {
+                    Handheld.Vibrate();
                     CreatePath(shortestPathList[i].start, shortestPathList[i].end, out shortestPathList[i].points);
                 }
             }

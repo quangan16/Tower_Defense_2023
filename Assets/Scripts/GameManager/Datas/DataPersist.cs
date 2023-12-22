@@ -9,8 +9,8 @@ public static class DataPersist
     public const string GOLD = "GOLD";
     public const string DIAMOND = "DIAMOND";
     public static PlayerData playerData = new PlayerData();
-    public static float volumeMusic;
-    public static float volumeSound;
+    public static int volumeMusic;
+    public static int volumeSound;
     public static bool onMusic;
     public static bool onSfx;
     public static void LoadDataTutorial()
@@ -41,9 +41,8 @@ public static class DataPersist
             playerData.SetAmountDiamond(PlayerPrefs.GetInt(DIAMOND));
             playerData.SetAmountGold(PlayerPrefs.GetInt(GOLD));
             playerData.LoadCardCollection();
-            volumeMusic = PlayerPrefs.GetFloat("ONMUSIC");
-            volumeSound = PlayerPrefs.GetFloat("ONSOUND");
-            SaveData();
+            // volumeMusic = PlayerPrefs.GetInt("ONMUSIC");
+            // volumeSound = PlayerPrefs.GetInt("ONSOUND");
         }
         else
         {
@@ -52,6 +51,9 @@ public static class DataPersist
             onSfx = true;
             SaveData();
         }
+
+        onMusic = (PlayerPrefs.GetInt("ONMUSIC") == 1);
+        onSfx = (PlayerPrefs.GetInt("ONSOUND") == 1);
     }
 
     //Logo delay.
@@ -100,8 +102,8 @@ public static class DataPersist
 
     public static void SaveData()
     {
-        PlayerPrefs.SetFloat("ONMUSIC", volumeMusic);
-        PlayerPrefs.SetFloat("ONSOUND", volumeSound);
+        PlayerPrefs.SetInt("ONMUSIC", onMusic ? 1 : 0);
+        PlayerPrefs.SetInt("ONSOUND", onSfx? 1 : 0);
         playerData.SaveHeart();
         playerData.SaveDiamond();
         playerData.SaveGold();

@@ -45,11 +45,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787249, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 60
+      value: 91
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787249, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 60
+      value: 134
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787249, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -104,8 +104,24 @@ PrefabInstance:
       value: UiPlant01
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787254, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 80f941cc1cbdbee4fb54f666b6f08dd2, type: 3}
+    - target: {fileID: 2847895183279787254, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847895183279787254, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847895183279787254, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847895183279787254, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4664406622725032522, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_IsActive

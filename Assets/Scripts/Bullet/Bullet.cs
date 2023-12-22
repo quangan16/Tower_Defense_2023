@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Bullet : MonoBehaviour
 {
@@ -13,12 +14,12 @@ public class Bullet : MonoBehaviour
     public bool isSetted = false;
     public Vector3 pointStart;
     public Rigidbody rb;
-    public EnemyMovement enemyMovement;
+    [FormerlySerializedAs("enemyControllerBase")] [FormerlySerializedAs("enemyMovement")] public EnemyController enemyController;
 
     public void HitTarget()
     {
         target = null;
-        enemyMovement = null;
+        enemyController = null;
         ObjectPool.instance.Return(gameObject);
     }
     public virtual void SetTarget(Transform _target)
@@ -32,6 +33,10 @@ public class Bullet : MonoBehaviour
 
     public virtual void FollowTarget()
     {
+        if (Vector3.Distance(target.position, transform.position) <= 0.1f)
+        {
+            HitTarget();
+        }
         Vector3 direction = target.position - transform.position;
         rb.velocity = direction.normalized * speed;
     }
@@ -44,11 +49,11 @@ public class Bullet : MonoBehaviour
         }
         else if(target != null)
         {
-            if (enemyMovement == null)
+            if (enemyController == null)
             {
-                enemyMovement = target.GetComponent<EnemyMovement>();
+                enemyController = target.GetComponent<EnemyController>();
             }
-            else if(enemyMovement.dead)
+            else if(enemyController.dead)
             {
                 HitTarget();
             }

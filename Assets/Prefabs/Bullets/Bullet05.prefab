@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d4d05f7a67268ab4bafa0c7bdf19bd07, type: 2}
     - target: {fileID: 4111233070249489940, guid: 688b1938e905b5945b0d5f7929900946, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 688b1938e905b5945b0d5f7929900946, type: 3}
@@ -121,6 +121,11 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 10
   atk: 0
+  explore: {fileID: 0}
+  isSetted: 0
+  pointStart: {x: 0, y: 0, z: 0}
+  rb: {fileID: 8002748742564122451}
+  enemyMovement: {fileID: 0}
 --- !u!1 &7194610776410707211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2209044462180880307, guid: 688b1938e905b5945b0d5f7929900946, type: 3}
@@ -139,3 +144,8 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8002748742564122451 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1332792599009859051, guid: 688b1938e905b5945b0d5f7929900946, type: 3}
+  m_PrefabInstance: {fileID: 9038863377488517816}
+  m_PrefabAsset: {fileID: 0}

@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4ddb92b45a2369e4eb670924ce1fc737, type: 3}
+    - target: {fileID: 3993589414838123156, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5307263886908117869, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
       propertyPath: id
       value: plant1
@@ -126,7 +130,11 @@ PrefabInstance:
     - target: {fileID: 5617470238296260771, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5a538198947a26e4bb0996cbe8778014, type: 3}
+      objectReference: {fileID: 21300000, guid: e5e218db6acd09a4bbce362e8026662b, type: 3}
+    - target: {fileID: 5617470238296260771, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5916712211345563198, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
       propertyPath: m_Name
       value: CardPllant02

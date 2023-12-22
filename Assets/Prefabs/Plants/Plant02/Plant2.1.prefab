@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6299636652761993636, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: range
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6299636652761993636, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: animator
@@ -51,9 +51,17 @@ PrefabInstance:
       propertyPath: uiPlantPrefab
       value: 
       objectReference: {fileID: 6008486200886516075, guid: 5fa43dec129858545b35e700a465f6df, type: 3}
+    - target: {fileID: 1238551196775456226, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1403336150980831313, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908373321609627480, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2004686954945280604, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: iconSprite
@@ -110,6 +118,14 @@ PrefabInstance:
     - target: {fileID: 6169590614465549545, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587383292282654388, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173663235171393776, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
+      propertyPath: otherObj
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7269573357980910240, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: m_Name
@@ -305,6 +321,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a2e184712a09d81438293da70805046f, type: 3}
       propertyPath: m_Name
       value: plant2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a2e184712a09d81438293da70805046f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e184712a09d81438293da70805046f, type: 3}

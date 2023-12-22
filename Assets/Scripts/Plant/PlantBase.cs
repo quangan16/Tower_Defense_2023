@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlantBase : MonoBehaviour
+public class PlantBase : MonoBehaviour, IShootable
 {
     public string namePlant;
     public int index;
@@ -20,7 +20,7 @@ public class PlantBase : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     public int indexBulletPrefab;
     public int level;
-
+    public GameObject objBullet;
     public GameObject posGrid;
     public GameObject uiPlantPrefab;
     public GameObject ui;
@@ -44,6 +44,7 @@ public class PlantBase : MonoBehaviour
         {
             if (namePlant.CompareTo(plant.id) == 0)
             {
+                Debug.Log(plant.range);
                 atk = plant.atk;
                 attackSpeed = plant.attackSpeed;
                 range = plant.range;
@@ -77,7 +78,7 @@ public class PlantBase : MonoBehaviour
     {
         for (int i = 0; i < enemies.Count; i++)
         {
-            if (!enemies[i].activeSelf || enemies[i].GetComponent<EnemyMovement>().dead)
+            if (!enemies[i].activeSelf || enemies[i].GetComponent<EnemyController>().dead)
             {
                 enemies.Remove(enemies[i]);
                 UpdateTarget();
@@ -105,7 +106,7 @@ public class PlantBase : MonoBehaviour
             for (int i = 0; i < enemies.Count; i++)
             {
                 float distanceToEnemy = Vector3.Distance(transform.position, enemies[i].transform.position);
-                if (distanceToEnemy > range)
+                if (distanceToEnemy > range || !enemies[i].activeSelf)
                 {
                     enemies.Remove(enemies[i]);
                     UpdateTarget();
@@ -126,7 +127,7 @@ public class PlantBase : MonoBehaviour
     }
     public virtual void Attack()
     {
-        if(!target.GetComponent<EnemyMovement>().dead)
+        if (!target.GetComponent<EnemyController>().dead)
         {
             animationPlant.ChangeAnimationState("attack", 0.2f, 0, 0.45f);
             animationPlant.EmitParticle();
@@ -134,14 +135,14 @@ public class PlantBase : MonoBehaviour
         }
     }
 
-    public void DelayAnimationAttack()
+    public virtual void DelayAnimationAttack()
     {
-        GameObject objBullet = ObjectPool.instance.GetFromObjectPool(ObjectPool.instance.bullets[indexBulletPrefab], firePoint.position);
+        objBullet = ObjectPool.instance.GetFromObjectPool(ObjectPool.instance.bullets[indexBulletPrefab], firePoint.position);
         Bullet bullet = objBullet.GetComponent<Bullet>();
         if (target != null)
         {
             bullet.SetTarget(target.transform);
-            bullet.enemyMovement = target.GetComponent<EnemyMovement>();
+            bullet.enemyController = target.GetComponent<EnemyController>();
             bullet.atk = atk;
             PlaySfx(0);
         }

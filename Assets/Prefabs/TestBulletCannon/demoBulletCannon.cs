@@ -43,7 +43,7 @@ public class demoBulletCannon : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<EnemyHealth>().TakeDamage(10, 1);
-            //Explosion();
+            Explosion();
             DOVirtual.DelayedCall(1f, () =>
             {
                 ObjectPool.instance.Return(gameObject);
@@ -59,7 +59,7 @@ public class demoBulletCannon : MonoBehaviour
         for (int i = 0; i < hitObjects.Length; i++)
         {
             if (hitObjects[i].CompareTag("Enemy"))
-                hitObjects[i].GetComponent<EnemyHealth>().TakeDamage(10, 1);
+                hitObjects[i].GetComponent<EnemyHealth>().TakeDamage(20, 1);
         }
     }
 }

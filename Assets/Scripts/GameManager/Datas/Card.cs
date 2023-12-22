@@ -36,9 +36,9 @@ public class Card
     }
     public void LevelUp()
     {
-        atk = (int)(atk * 1.2f);
-        attackSpeed *= 1.1f;
-        range *= 1.1f;
+        atk += 1;
+        attackSpeed += 0.01f;
+        range *= 1.01f;
         level++;
         SaveData();
     }

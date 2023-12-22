@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Plant02 : PlantBase
 {
+    public ParticleSystem gas;
     private void Update()
     {
         AddEnemy();
@@ -22,7 +23,7 @@ public class Plant02 : PlantBase
             if (fireCountdown <= 0)
             {
                 animationPlant.ChangeAnimationState("attack", 0.08f, 0, 0.65f);
-                Invoke("Shoot", 0f/attackSpeed);
+                Invoke("Shoot", 0);
                 //Invoke("Shoot", 1.2f/attackSpeed);
                 
                 fireCountdown = 1 / attackSpeed;
@@ -30,33 +31,47 @@ public class Plant02 : PlantBase
             fireCountdown -= Time.deltaTime;
         }
     }
-    public override void Attack(){}
-    public void Attack(int value, Vector3 direction)
-    {
-        GameObject objBullet = ObjectPool.instance.Get(ObjectPool.instance.bullets[indexBulletPrefab]);
-        objBullet.SetActive(true);
-        Vector3 originalVector = direction;
-        Quaternion rotation = Quaternion.AngleAxis(value, Vector3.up);
-        Vector3 rotatedVector = rotation * originalVector;
-        objBullet.transform.position = firePoint.transform.position + rotatedVector.normalized * 0.6f;
-        Bullet bullet = objBullet.GetComponent<Bullet>();
-        if (bullet != null)
+    public override void Attack(){
+        Collider[] enemyColliders = Physics.OverlapSphere(transform.position, range, 1 << 8);
+        for (int i = 0; i < enemyColliders.Length; i++)
         {
-            bullet.pointStart = firePoint.position;
-            bullet.atk = atk;
-            AudioManager.instance.PlayShot("Shroom", 0);
-            bullet.isSetted = false;
-            bullet.SetTarget(rotatedVector);
+            if (enemyColliders[i].CompareTag("Enemy"))
+            {
+                gas.Play();
+                enemyColliders[i].GetComponent<EnemyHealth>().TakeDamage(atk, 1);
+                enemyColliders[i].GetComponent<EnemyHealth>().TakePoisoned1(10, 2, 2.0f);
+                enemyColliders[i].gameObject.GetComponent<EnemyHealth>().takeDamage = true;
+                enemies.Remove(enemyColliders[i].gameObject);
+            }
         }
     }
+    //public void Attack(int value, Vector3 direction)
+    //{
+    //    GameObject objBullet = ObjectPool.instance.Get(ObjectPool.instance.bullets[indexBulletPrefab]);
+    //    objBullet.SetActive(true);
+    //    Vector3 originalVector = direction;
+    //    Quaternion rotation = Quaternion.AngleAxis(value, Vector3.up);
+    //    Vector3 rotatedVector = rotation * originalVector;
+    //    objBullet.transform.position = firePoint.transform.position + rotatedVector.normalized * 0.6f;
+    //    Bullet bullet = objBullet.GetComponent<Bullet>();
+    //    if (bullet != null)
+    //    {
+    //        bullet.pointStart = firePoint.position;
+    //        bullet.atk = atk;
+    //        AudioManager.instance.PlayShot("Shroom", 0);
+    //        bullet.isSetted = false;
+    //        bullet.SetTarget(rotatedVector);
+    //    }
+    //}
+
+  
 
     public void Shoot()
     {
-        //smokeBullet.Play();
-        for (int i = 0; i < 360; i += 45)
-        {
-            Attack(i, transform.forward);
-        }
+      
+       
+        Attack();
+    
         animationPlant.ChangeAnimationState("idle", 0.25f, 0, 0f);
     }
 }

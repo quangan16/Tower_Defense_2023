@@ -5013,6 +5013,7 @@ MonoBehaviour:
   isSetted: 0
   pointStart: {x: 0, y: 0, z: 0}
   rb: {fileID: 8002748742564122451}
+  enemyMovement: {fileID: 0}
 --- !u!4 &7194610776410707700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2209044462180879436, guid: 688b1938e905b5945b0d5f7929900946, type: 3}

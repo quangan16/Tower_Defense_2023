@@ -167,4 +167,9 @@ public class UiManager : MonoBehaviour
         popUpCardInfo.SetActive(true);
         loadCardInfo.LoadCardData(id, image);
     }
+
+    public void UpdateCardLevel(int level)
+    {
+        
+    }
 }

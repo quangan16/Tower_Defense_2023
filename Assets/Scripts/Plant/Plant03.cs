@@ -6,22 +6,29 @@ using UnityEngine;
 
 public class Plant03 : PlantBase
 {
+
     private void Update()
     {
         UpdateRotateGunHead();
-        RateAttack();
         AddEnemy();
         RemoveEnemy();
         DeActiveUpdateTarget();
+        RateAttack();
     }
-    public override void Attack()
+    public override void DelayAnimationAttack()
     {
+        
         GameObject objBullet = ObjectPool.instance.GetFromObjectPool(ObjectPool.instance.bullets[indexBulletPrefab], firePoint.position);
-        Bullet bullet = objBullet.GetComponent<Bullet>();
+        Bullet03 bullet = objBullet.GetComponent<Bullet03>();
         if (bullet != null)
         {
-            bullet.SetTarget(target.transform);
+            
+            bullet.SetDirection(transform.position, target.transform.position);
+           
+            bullet.enemyController = target.GetComponent<EnemyController>();
             bullet.atk = atk;
         }
+
+        Invoke(nameof(DelayIdleAnimation), 0.5f / attackSpeed);
     }
 }

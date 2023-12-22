@@ -38,12 +38,16 @@ public class PlayerData
     {
         cardsCollection = new List<Card>();
         Card plant01 = new Card("plant1", 1, 100, 2, 2.5f, "PeaShooter", "Common", "Single target");
-        Card plant02 = new Card("plant2", 1, 200, 1, 2.5f, "Shroom", "Common", "Five direction");
-        Card plant03 = new Card("plant3", 1, 300, 1.5f, 2.5f, "Cannon Boom", "Common", "Explore with radius");
+        Card plant02 = new Card("plant2", 1, 50, 1, 3.5f, "Shroom", "Common", "Five direction");
+        Card plant03 = new Card("plant3", 1, 200, 1, 2.5f, "Apple", "Common", "Go through enemies");
+        Card plant04 = new Card("plant4", 1, 300, 1.5f, 2.5f, "Cannon Boom", "Common", "Explode with radius");
+        Card plant05 = new Card("plant5", 1, 300, 1.5f, 2.5f, "FreezeMachine", "Common", "Slow sown target");
 
         cardsCollection.Add(plant01);
         cardsCollection.Add(plant02);
         cardsCollection.Add(plant03);
+        cardsCollection.Add(plant04);
+        cardsCollection.Add(plant05);
     }
 
     //get and set heart.

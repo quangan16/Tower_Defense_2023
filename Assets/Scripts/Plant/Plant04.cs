@@ -8,7 +8,7 @@ using UnityEngine;
 public class Plant04 : PlantBase
 {
     public bulletBezier bulletBezier;
-    public GameObject prefab;
+    public GameObject bulletPrefab;
     private void Update()
     {
         AddEnemy();
@@ -33,21 +33,21 @@ public class Plant04 : PlantBase
     public virtual void Attack2()
     {
         animationPlant.ChangeAnimationState("attack", 0.2f, 0, 0.45f);
-        // smokeBullet.Play();
-        DOVirtual.DelayedCall(1 / attackSpeed, () =>
+         //smokeBullet.Play();
+        DOVirtual.DelayedCall(0.2f / attackSpeed, () =>
         {
             Shoot();
 
-                DOVirtual.DelayedCall(1 / attackSpeed, () => {
-                    animationPlant.ChangeAnimationState("idle", 0.25f, 0, 0f); 
-                });
+                DOVirtual.DelayedCall(0.5f / attackSpeed, () => {
+                animationPlant.ChangeAnimationState("idle", 0.25f, 0, 0f);
+            });
         });
     }
     public void Shoot()
     {
         if(target != null)
         {
-            GameObject newBullet = Instantiate(prefab);
+            GameObject newBullet = Instantiate(bulletPrefab);
             bulletBezier.B = target.transform;
             newBullet.GetComponent<LaunchBulletBezier>().bulletRule = bulletBezier;
         }

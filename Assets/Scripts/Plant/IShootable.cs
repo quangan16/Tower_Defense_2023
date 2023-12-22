@@ -1,0 +1,4 @@
+interface IShootable
+{
+    void Attack();
+}

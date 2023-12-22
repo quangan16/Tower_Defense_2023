@@ -136,6 +136,32 @@ public class EnemyBase : MonoBehaviour
             ObjectPool.instance.Return(gameObject);
         }
     }
+
+    public virtual void GetPathMove1()
+    {
+        PathFinding pathFinding = PathFinding.Instance;
+        GameManager gameManager = GameManager.Instance;
+        for (int j = 0; j < gameManager.gatePositions.Length; j++)
+        {
+            if (transform.position == gameManager.gatePositions[j].position)
+            {
+                int lenghth = pathFinding.shortestPathList[j].points.Count;
+                path = new Vector3[lenghth];
+                for (int i = 0; i < lenghth; i++)
+                {
+                    float offset = 0;
+                    for (int k = 0; k < pathFinding.shortestPathList[j].points[i].x; k++)
+                    {
+                        offset += 1.4f;
+                    }
+                    float x = offset;
+                    float y = pathFinding.shortestPathList[j].points[i].y;
+                    path[i] = new Vector3(x, 1, y);
+                }
+            }
+        }
+
+    }
 }
 
 public enum EnemyState
@@ -143,7 +169,6 @@ public enum EnemyState
     NORMAL,
     SLOW,
     POISONED,
-    BURNED,
     FROZEN
     
     

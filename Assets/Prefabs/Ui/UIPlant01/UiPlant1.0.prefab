@@ -110,9 +110,13 @@ PrefabInstance:
     - target: {fileID: 4958099257742680006, guid: d6bcce1db3e2ad24cbe1ed7528c0de11, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7647e5a70c96b6b47b237e3bac6bff05, type: 3}
+      objectReference: {fileID: 21300000, guid: 80f941cc1cbdbee4fb54f666b6f08dd2, type: 3}
     - target: {fileID: 4958099257742680006, guid: d6bcce1db3e2ad24cbe1ed7528c0de11, type: 3}
       propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958099257742680006, guid: d6bcce1db3e2ad24cbe1ed7528c0de11, type: 3}
+      propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

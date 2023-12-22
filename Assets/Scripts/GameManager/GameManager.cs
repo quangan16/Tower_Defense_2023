@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         DataPersist.playerData.SubAmountHeart(5);
     }
 
-    public void SpeedUp()
+    public void SetGameSpeed()
     {
         if (Time.timeScale == 1)
         {
@@ -107,9 +107,9 @@ public class GameManager : MonoBehaviour
     public void SpawnEnemy(int i, Transform trasPos)
     {
         GameObject newEnemy = ObjectPool.instance.GetFromObjectPool(ObjectPool.instance.enemies[i], trasPos.position);
-        EnemyMovement enemy = newEnemy.GetComponent<EnemyMovement>();
+        EnemyController enemy = newEnemy.GetComponent<EnemyController>();
         enemy.SetValue();
-        Vector3 direction = enemy.path[1] - newEnemy.transform.position;
+        Vector3 direction = enemy.paths[1] - newEnemy.transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(newEnemy.transform.rotation, lookRotation, 2).eulerAngles;
         newEnemy.transform.rotation = Quaternion.Euler(0, rotation.y, 0);

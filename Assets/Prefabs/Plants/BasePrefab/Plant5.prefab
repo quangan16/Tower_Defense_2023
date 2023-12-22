@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 773183254625117797, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: plantBase
       value: 
@@ -63,6 +67,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant5
       objectReference: {fileID: 0}
+    - target: {fileID: 5418948327954289311, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: plantBase
+      value: 
+      objectReference: {fileID: 6829048877287213745}
+    - target: {fileID: 8577393822753874077, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: smokeBullet
+      value: 
+      objectReference: {fileID: 9041180703351303186}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
 --- !u!114 &2875806599323650142 stripped
@@ -107,8 +119,12 @@ MonoBehaviour:
   enemies: []
   indexBulletPrefab: 4
   level: 0
-  smokeBullet: {fileID: 0}
   posGrid: {fileID: 0}
   uiPlantPrefab: {fileID: 0}
   ui: {fileID: 0}
   animationPlant: {fileID: 2875806599323650142}
+--- !u!198 &9041180703351303186 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3285750945818346705, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+  m_PrefabInstance: {fileID: 5828199844253460675}
+  m_PrefabAsset: {fileID: 0}

@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant2.2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fbb36d5ce571f2a498c2ab5c1a32e3e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbb36d5ce571f2a498c2ab5c1a32e3e1, type: 3}
 --- !u!1 &616995192751009609 stripped
@@ -218,9 +222,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7505629984096533709, guid: 7f12dad0b9f6fe74691749115d73ac59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9041180703336044538, guid: 7f12dad0b9f6fe74691749115d73ac59, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f12dad0b9f6fe74691749115d73ac59, type: 3}

@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 3212087675014118133}
   - component: {fileID: 5170387529931067746}
   - component: {fileID: 1111334527230423495}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyBase
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -672,9 +672,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  currentSpeed: 0
   ismoved: 0
   turnSpeed: 10
-  path: []
+  paths: []
   dead: 0
 --- !u!114 &5170387529931067746
 MonoBehaviour:
@@ -711,6 +712,8 @@ MonoBehaviour:
   maxHealth: 100
   healthText: {fileID: 143739801627502942}
   healthSlider: {fileID: 5285656933896017085}
+  enemyController: {fileID: 3212087675014118133}
   takeDamage: 0
-  enemyMovement: {fileID: 3212087675014118133}
   enemyAnimation: {fileID: 5170387529931067746}
+  enemyState: 0
+  boxCollider: {fileID: 5937313793255907773}

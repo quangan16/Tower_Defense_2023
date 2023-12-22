@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Enemy02">
+    <Position X="8" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABIAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\Enemy02.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy01">
+    <Position X="5.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABIAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\Enemy01.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy04">
+    <Position X="12.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABIAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\Enemy04.cs</FileName>
+      <NewMemberFileName>Assets\Scripts\Enemy\Enemy03.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyAnimation">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAQQAAAECAAAAIAAAAAAAAAAAAAIAAAAAASAACAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyBase">
+    <Position X="8.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>DAUQQIAIEAEAAkIAAIACIAAAAAAIAASKUACAgCABCAg=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyHealth">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAQAAIACAAAkIBAFAAAAAAAAAAAACAABQAgKAACAg=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyHealth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyMovement">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAIAAFIAAIgAAAIACABAAgCAAABAKQAAAAAABCAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy03">
+    <Position X="10.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABIAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\Enemy03.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PathFinding">
+    <Position X="16.75" Y="2.75" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="PathFinding.Point" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PathFinding\PathFinding.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="PathFinding.PointFloat" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\PathFinding\PathFinding.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EIACAABAgKJAAAAECAAAEAIAAAAAQwAAVAAAAAAAAFA=</HashCode>
+      <FileName>Assets\Scripts\PathFinding\PathFinding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShortestPath">
+    <Position X="18.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACCAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PathFinding\ShortestPath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager">
+    <Position X="15" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEiAgAAACAACAAAAAEABAgFAAQCAAAIQABGQAAUBOk=</HashCode>
+      <FileName>Assets\Scripts\GameManager\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wave">
+    <Position X="15" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\Wave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="EnemyState">
+    <Position X="15" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAIAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyBase.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
