@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787248, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: nameUiPlant
-      value: 2
+      value: plant3
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787249, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_Pivot.x
@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 2847895183279787254, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8f48848562360a345a55758535942053, type: 3}
+      objectReference: {fileID: 21300000, guid: b0e0d30955374d64d8cbcf2914107db0, type: 3}
     - target: {fileID: 2847895183279787254, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_PreserveAspect
       value: 1

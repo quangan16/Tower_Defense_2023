@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2847895183279787248, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: nameUiPlant
-      value: 1
+      value: plant2
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787249, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_Pivot.x

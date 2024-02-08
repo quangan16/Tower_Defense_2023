@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1ecdfb26d37e54a8d50909506f3c20, type: 3}
   m_Name: chapter5
   m_EditorClassIdentifier: 
-  nameChapter: 'Chapter 2: Northern Dead'
+  nameChapter: 'Chapter 5: Zomb Cave'
   background: {fileID: 21300000, guid: 0b2ed5f0bc6c03a4996db0dbd2ac26a6, type: 3}
-  waveMax: 0
-  waveCurrent: 15
+  waveMax: 15
+  waveCurrent: 0

@@ -272,8 +272,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909b8f98dd6954646a9403c3d8800c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPlantScriptable: {fileID: 11400000, guid: 418c4d3e395815044bf7f9b205d4f4ff, type: 2}
+  id: 
   button: {fileID: 975276968321655817}
+  icon: {fileID: 0}
+  levelTxt: {fileID: 7690912240880284885}
 --- !u!114 &1159805518435691255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -495,7 +497,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 7647e5a70c96b6b47b237e3bac6bff05, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

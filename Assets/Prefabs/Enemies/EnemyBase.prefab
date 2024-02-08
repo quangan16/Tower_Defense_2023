@@ -671,12 +671,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec25175260dce7f4a8cafd79f6cf944a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAnimation: {fileID: 5170387529931067746}
   moveSpeed: 1
   currentSpeed: 0
   ismoved: 0
   turnSpeed: 10
   paths: []
   dead: 0
+  enemyState: 0
 --- !u!114 &5170387529931067746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,6 +698,7 @@ MonoBehaviour:
   blinkDuration: 0.2
   blinkTimer: 0
   posExplore: {fileID: 4288183185906090387}
+  enemyController: {fileID: 3212087675014118133}
 --- !u!114 &1111334527230423495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,5 +718,4 @@ MonoBehaviour:
   enemyController: {fileID: 3212087675014118133}
   takeDamage: 0
   enemyAnimation: {fileID: 5170387529931067746}
-  enemyState: 0
   boxCollider: {fileID: 5937313793255907773}

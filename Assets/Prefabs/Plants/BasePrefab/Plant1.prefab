@@ -86,12 +86,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 396076080671980586, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.3
+      value: 0.214
       objectReference: {fileID: 0}
     - target: {fileID: 773183254625117797, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: plantBase
@@ -127,7 +131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalPosition.z
@@ -135,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalRotation.x
@@ -143,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalRotation.z
@@ -155,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3747938911229209184, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -180,10 +184,22 @@ PrefabInstance:
     - target: {fileID: 5418948327954289311, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: iconSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7647e5a70c96b6b47b237e3bac6bff05, type: 3}
+      objectReference: {fileID: 21300000, guid: 80f941cc1cbdbee4fb54f666b6f08dd2, type: 3}
+    - target: {fileID: 5418948327954289311, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: description
+      value: High damage, single target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_Size.x
+      value: 0.57
+      objectReference: {fileID: 0}
     - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_Size.y
-      value: 0.95
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_Size.z
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_Center.x
@@ -191,11 +207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_Center.y
-      value: 0
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_Center.z
-      value: -0.4
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 7329291853397902446, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: LightBlock
@@ -258,6 +274,7 @@ MonoBehaviour:
   enemies: []
   indexBulletPrefab: 0
   level: 1
+  objBullet: {fileID: 0}
   posGrid: {fileID: 0}
   uiPlantPrefab: {fileID: 3291094012496103974, guid: b8f10205d54fc0d4d8a4322bf271defb, type: 3}
   ui: {fileID: 0}

@@ -11,6 +11,8 @@ using UnityEngine.Serialization;
 public class EnemyController : MonoBehaviour, IMovable
 {
     protected int index = 0;
+    public EnemyAnimation enemyAnimation;
+    public EnemyHealth enemyHealth;
     public float moveSpeed = 1;
     public float currentSpeed;
     public bool ismoved = false;
@@ -18,11 +20,13 @@ public class EnemyController : MonoBehaviour, IMovable
     public Vector3[] paths;
     public bool dead = false;
     private Tween delayedTween;
-    public void OnEnable()
+    public EnemyState enemyState;
+    public virtual void OnEnable()
     {
         SetValue();
     }
-    public void Update()
+
+    public virtual void Update()
     {
         if (ismoved && !dead)
         {
@@ -110,18 +114,35 @@ public class EnemyController : MonoBehaviour, IMovable
     }
 
    public void GetSlowed(float slowPercent, float duration)
-    {
+   {
+       enemyAnimation.OnSlowed();
+       enemyState = EnemyState.SLOW;
         if(delayedTween != null && delayedTween.IsActive())
         {
             delayedTween.Kill();
         }
-      
+        
         SetSpeed(moveSpeed *(1- slowPercent));
-        delayedTween =  DOVirtual.DelayedCall(duration, () => { currentSpeed = moveSpeed; });
+        delayedTween =  DOVirtual.DelayedCall(duration, () =>
+        {
+            currentSpeed = moveSpeed;
+            enemyState = EnemyState.NORMAL;
+            enemyAnimation.OnNormal();
+        });
     }
 
     public void SetSpeed(float speed)
     {
         currentSpeed = speed;
     }
+}
+
+public enum EnemyState
+{
+    NORMAL,
+    SLOW,
+    POISONED,
+    FROZEN
+
+
 }

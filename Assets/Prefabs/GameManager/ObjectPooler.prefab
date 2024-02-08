@@ -51,15 +51,19 @@ MonoBehaviour:
     actives: []
   enemies:
   - name: 
-    go: {fileID: 2490752461469309657, guid: 414494c1508da8847b87032d5f0b27f2, type: 3}
-    count: 0
-    actives: []
-  - name: 
     go: {fileID: 2490752461469309657, guid: 5c59e08e7f74ba042ae432ccd2e77723, type: 3}
     count: 0
     actives: []
   - name: 
+    go: {fileID: 2490752461469309657, guid: 414494c1508da8847b87032d5f0b27f2, type: 3}
+    count: 0
+    actives: []
+  - name: 
     go: {fileID: 2490752461469309657, guid: fc2ca8c38013c184cadd8c4c160ceb6e, type: 3}
+    count: 0
+    actives: []
+  - name: 
+    go: {fileID: 2490752461469309657, guid: 0dba19de2df8e6d4d9fee3d65030478d, type: 3}
     count: 0
     actives: []
   particleEnemies:
@@ -228,5 +232,34 @@ MonoBehaviour:
     go: {fileID: 5565283723475319120, guid: d6957e46a2093ea4386fc0fb4b752567, type: 3}
     count: 0
     actives: []
-  powerUps: []
+  powerUps:
+  - name: 
+    go: {fileID: 518119283113543937, guid: 99d8ef1af891cb548bedd114f45202cb, type: 3}
+    count: 0
+    actives: []
+  - name: 
+    go: {fileID: 518119283113543937, guid: 72a73cea5d21dea4f936c4220f42fa5b, type: 3}
+    count: 0
+    actives: []
+  - name: 
+    go: {fileID: 518119283113543937, guid: aec9485e94622c842ae16024f5365994, type: 3}
+    count: 0
+    actives: []
+  enemiesIcons:
+  - name: 
+    go: {fileID: 8126308441998116512, guid: 62ebd0ab1af6c384886bacd5951970b4, type: 3}
+    count: 0
+    actives: []
+  - name: 
+    go: {fileID: 2654743888510857543, guid: 58466a9c2e46d434da89fd44a0e9a1ae, type: 3}
+    count: 0
+    actives: []
+  - name: 
+    go: {fileID: 666398204987443456, guid: c10398bd160c53840b6130b0009a2975, type: 3}
+    count: 0
+    actives: []
+  - name: 
+    go: {fileID: 1935266054629127262, guid: 6f1d65cc513bce743bac4a3a5f8a711c, type: 3}
+    count: 0
+    actives: []
   pools: []

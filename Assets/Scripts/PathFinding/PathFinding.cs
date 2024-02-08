@@ -43,14 +43,14 @@ public class PathFinding : MonoBehaviour
     {
         { 0, 0, 0, 0, 0 ,0 , 0},
         { 0, 0, 0, 0, 0 ,0 , 0},
-        { 1, 1, 0, 0, 0 ,1 , 0},
-        { 0, 0, 0, 0, 0 ,1 , 0},
         { 0, 0, 0, 0, 0 ,0 , 0},
         { 0, 0, 0, 0, 0 ,0 , 0},
         { 0, 0, 0, 0, 0 ,0 , 0},
         { 0, 0, 0, 0, 0 ,0 , 0},
-        { 0, 0, 0, 0, 0 ,1 , 0},
-        { 0, 0, 0, 1, 0 ,0 , 0},
+        { 0, 0, 0, 0, 0 ,0 , 0},
+        { 0, 0, 0, 0, 0 ,0 , 0},
+        { 0, 0, 0, 0, 0 ,0 , 0},
+        { 0, 0, 0, 0, 0 ,0 , 0},
     };
 
     public void SetValueGrid()
@@ -84,18 +84,133 @@ public class PathFinding : MonoBehaviour
         SetValueGrid();
         UpdatePath();
     }
-    public static List<Point> GetShortestPath(Point start, Point end)
+    
+    public static List<Point> AStarPathFinding(Point start, Point end)
+    {
+        Dictionary<Point, Point> cameFrom = new Dictionary<Point, Point>();
+        Dictionary<Point, float> gScore = new Dictionary<Point, float>();
+        Dictionary<Point, float> fScore = new Dictionary<Point, float>();
+
+        List<Point> openSet = new List<Point> { start };
+        gScore[start] = 0;
+        fScore[start] = HeuristicCostEstimate(start, end);
+
+        while (openSet.Count > 0)
+        {
+            Point current = GetNodeWithLowestFScore(openSet, fScore);
+
+            if (current.Equals(end))
+            {
+                return ReconstructPath(cameFrom, current);
+            }
+
+            openSet.Remove(current);
+
+            foreach (Point neighbor in GetNeighbors(current))
+            {
+                float tentativeGScore = gScore[current] + DistanceBetween(current, neighbor);
+
+                if (!gScore.ContainsKey(neighbor) || tentativeGScore < gScore[neighbor])
+                {
+                    cameFrom[neighbor] = current;
+                    gScore[neighbor] = tentativeGScore;
+                    fScore[neighbor] = gScore[neighbor] + HeuristicCostEstimate(neighbor, end);
+
+                    if (!openSet.Contains(neighbor))
+                    {
+                        openSet.Add(neighbor);
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private static float HeuristicCostEstimate(Point a, Point b)
+    {
+        return Math.Abs(a.x - b.x) + Math.Abs(a.y - b.y);
+    }
+
+    private static Point GetNodeWithLowestFScore(List<Point> openSet, Dictionary<Point, float> fScore)
+    {
+        Point nodeWithLowestFScore = openSet[0];
+        float lowestFScore = float.MaxValue;
+
+        foreach (Point node in openSet)
+        {
+            if (fScore[node] < lowestFScore)
+            {
+                lowestFScore = fScore[node];
+                nodeWithLowestFScore = node;
+            }
+        }
+
+        return nodeWithLowestFScore;
+    }
+
+    private static List<Point> ReconstructPath(Dictionary<Point, Point> cameFrom, Point current)
+    {
+        List<Point> totalPath = new List<Point> { current };
+
+        while (cameFrom.ContainsKey(current))
+        {
+            current = cameFrom[current];
+            totalPath.Insert(0, current);
+        }
+
+        return totalPath;
+    }
+
+    private static List<Point> GetNeighbors(Point node)
+    {
+        List<Point> neighbors = new List<Point>();
+
+        //Di chuyen theo 4 huong len xuong trai phai
+        Point[] directions = new Point[]
+        {
+            new Point(-1, 0), // up
+            new Point(1, 0), // down
+            new Point(0, -1), // left
+            new Point(0, 1) // right
+        };
+
+        foreach (var direction in directions)
+        {
+            int newX = node.x + direction.x;
+            int newY = node.y + direction.y;
+
+            // Check if the neighbor is within the grid
+            if (newX >= 0 && newX < grid.GetLength(0) && newY >= 0 && newY < grid.GetLength(1))
+            {
+                //Kiem tra o khong bi chan boi vat can va co the di duoc
+                if (grid[newX, newY] == 0)
+                {
+                    neighbors.Add(new Point(newX, newY));
+                }
+            }
+        }
+
+        return neighbors;
+    }
+
+    private static float DistanceBetween(Point a, Point b)
+    {
+        // Calculate the Euclidean distance between two points
+        return Mathf.Sqrt(Mathf.Pow(a.x - b.x, 2) + Mathf.Pow(a.y - b.y, 2));
+    }
+    public static List<Point> BfsPathFinding(Point start, Point end)
     {
         Queue<Point> queue = new Queue<Point>();
         bool[,] visited = new bool[grid.GetLength(0), grid.GetLength(1)];
         Point[,] parent = new Point[grid.GetLength(0), grid.GetLength(1)];
-
+    
         int[] dx = { 1, -1, 0, 0 };
         int[] dy = { 0, 0, 1, -1 };
-
+    
         queue.Enqueue(start);
         visited[start.x, start.y] = true;
-
+    
         for (int i = 0; i < grid.GetLength(0); i++)
         {
             for (int j = 0; j < grid.GetLength(1); j++)
@@ -103,19 +218,19 @@ public class PathFinding : MonoBehaviour
                 parent[i, j] = new Point(10000, 10000);
             }
         }
-
+    
         while (queue.Count > 0)
         {
             Point current = queue.Dequeue();
-
+    
             if (current.x == end.x && current.y == end.y)
                 break;
-
+    
             for (int i = 0; i < 4; i++)
             {
                 int newX = current.x + dx[i];
                 int newY = current.y + dy[i];
-
+    
                 if (newX >= 0 && newX < grid.GetLength(0) && newY >= 0 && newY < grid.GetLength(1) &&
                     grid[newX, newY] == 0 && !visited[newX, newY])
                 {
@@ -125,10 +240,10 @@ public class PathFinding : MonoBehaviour
                 }
             }
         }
-
+    
         List<Point> shortestPath = new List<Point>();
         Point currentPoint = end;
-
+    
         while (currentPoint.x != start.x || currentPoint.y != start.y)
         {
             shortestPath.Insert(0, currentPoint);
@@ -144,10 +259,13 @@ public class PathFinding : MonoBehaviour
         shortestPath.Insert(0, start);
         return shortestPath;
     }
+//    
 
+
+    
     public void CreatePath(Point start, Point end, out List<Point> _shortestPath)
     {
-        List<Point> shortestPath = GetShortestPath(start, end);
+        List<Point> shortestPath = BfsPathFinding(start, end);
         List<PointFloat> shortestPath3 = new List<PointFloat>();
         if (shortestPath.Count > 2)
         {
@@ -192,7 +310,7 @@ public class PathFinding : MonoBehaviour
     }
     public bool HasPath(Point start, Point end)
     {
-        List<Point> shortestPath = GetShortestPath(start, end);
+        List<Point> shortestPath = BfsPathFinding(start, end);
 
         if (shortestPath.Count > 3)
         {
@@ -258,14 +376,13 @@ public class PathFinding : MonoBehaviour
                 GameManager gameManager = GameManager.Instance;
                 if (gameManager.waves[gameManager.waveCount - 1].gates[i])
                 {
-                    Handheld.Vibrate();
                     CreatePath(shortestPathList[i].start, shortestPathList[i].end, out shortestPathList[i].points);
                 }
             }
         }
         else
         {
-            Debug.Log("null");
+            // Debug.Log("null");
         }
     }
 }

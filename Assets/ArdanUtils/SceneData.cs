@@ -36,7 +36,7 @@ public class SceneData : SingletonBehivour<SceneData>
         {
             if (sync.progress >= 0.9f)
             {
-                Debug.Log("Sync >= 0.9f");
+                // Debug.Log("Sync >= 0.9f");
                 break;
             }
 

@@ -87,6 +87,7 @@ public class UiPlant : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerD
         if (collision.gameObject.tag == "UiPlant")
         {
             triggerStay = false;
+            ismerged = false;
         }
 
     }
@@ -114,6 +115,7 @@ public class UiPlant : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerD
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        FollowMousePos.offHolding?.Invoke();
         image.raycastTarget = true;
         if (_newPlant != null)
         {
@@ -143,9 +145,11 @@ public class UiPlant : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerD
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        FollowMousePos.nameID = nameUiPlant;
         //gameObject.transform.SetParent(parentAfterDrag);
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
+        FollowMousePos.onHolding?.Invoke();
         image.raycastTarget = false;
         if (triggerStay == false && ismerged)
         {

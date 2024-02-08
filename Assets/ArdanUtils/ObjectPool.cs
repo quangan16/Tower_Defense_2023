@@ -92,6 +92,7 @@ public class ObjectPool : MonoBehaviour
     public List<PoolUIPlants> uiPlants;
     public Pool[] bullets;
     public Pool[] powerUps;
+    public Pool[] enemiesIcons;
 
     public Dictionary<int, int> dicClones = new Dictionary<int, int>();
     public List<Pool> pools = new List<Pool>();
@@ -123,6 +124,11 @@ public class ObjectPool : MonoBehaviour
             {
                 pools.Add(plants[i].array[j]);
             }
+        }
+
+        foreach (Pool enemyIcon in enemiesIcons)
+        {
+            pools.Add(enemyIcon);
         }
 
         for (int i = 0; i < uiPlants.Count; i++)
@@ -187,6 +193,7 @@ public class ObjectPool : MonoBehaviour
     {
         clone.SetActive(false);
         clone.transform.DOKill();
+        clone.transform.position = new Vector3(-10, 0, 0);
         var hash = clone.GetHashCode();
         if (dicClones.ContainsKey(hash))
         {

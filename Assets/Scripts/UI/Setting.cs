@@ -13,8 +13,10 @@ public class Setting : MonoBehaviour
     [SerializeField] private Image soundKnob;
     [SerializeField] private Image soundBack;
     [SerializeField] private Image hapticKnob;
+    [SerializeField] private Image hapticBack;
     [SerializeField] private Toggle musicToggle;
     [SerializeField] private Toggle soundToggle;
+    [SerializeField] private Toggle hapticToggle;
     [SerializeField] private bool onMusic;
     [SerializeField] private bool onSfx;
     [SerializeField] private AudioMixerGroup musicGroup;
@@ -32,7 +34,10 @@ public class Setting : MonoBehaviour
         // soundToggle.isOn = DataPersist.onSfx;
         ToggleMusic();
         ToggleSound();
+        ToggleHaptic();
     }
+
+    
     public void ToggleMusic()
     {
         DataPersist.onMusic = musicToggle.isOn;
@@ -65,6 +70,22 @@ public class Setting : MonoBehaviour
         Save();
     }
 
+    public void ToggleHaptic()
+    {
+        DataPersist.onHaptic = hapticToggle.isOn;
+        Debug.Log(DataPersist.onHaptic);
+        if (DataPersist.onHaptic)
+        {
+            EnableHaptic();
+        }
+        else
+        {
+            DisableHaptic();
+        }
+
+        Save();
+    }
+
     private void EnableMusic()
     {
         musicGroup.audioMixer.SetFloat("musicVolume", 0.0f);
@@ -91,6 +112,20 @@ public class Setting : MonoBehaviour
         soundGroup.audioMixer.SetFloat("soundVolume", -80.0f);
         soundBack.enabled = false;
         soundKnob.rectTransform.anchoredPosition = Vector3.left * 45;
+    }
+
+    private void EnableHaptic()
+    {
+       
+        hapticBack.enabled = true;
+        hapticKnob.rectTransform.anchoredPosition = Vector3.right * 45;
+    }
+
+    private void DisableHaptic()
+    {
+      
+        hapticBack.enabled = false;
+        hapticKnob.rectTransform.anchoredPosition = Vector3.left * 45;
     }
 
     private void Save()

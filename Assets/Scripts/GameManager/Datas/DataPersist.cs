@@ -13,6 +13,7 @@ public static class DataPersist
     public static int volumeSound;
     public static bool onMusic;
     public static bool onSfx;
+    public static bool onHaptic;
     public static void LoadDataTutorial()
     {
         int value;
@@ -49,11 +50,13 @@ public static class DataPersist
             playerData = new PlayerData();
             onMusic = true;
             onSfx = true;
+            onHaptic = true;
             SaveData();
         }
 
         onMusic = (PlayerPrefs.GetInt("ONMUSIC") == 1);
         onSfx = (PlayerPrefs.GetInt("ONSOUND") == 1);
+        onHaptic = (PlayerPrefs.GetInt("ONHAPTIC") == 1);
     }
 
     //Logo delay.
@@ -104,6 +107,7 @@ public static class DataPersist
     {
         PlayerPrefs.SetInt("ONMUSIC", onMusic ? 1 : 0);
         PlayerPrefs.SetInt("ONSOUND", onSfx? 1 : 0);
+        PlayerPrefs.SetInt("ONHAPTIC", onHaptic ? 1 : 0);
         playerData.SaveHeart();
         playerData.SaveDiamond();
         playerData.SaveGold();

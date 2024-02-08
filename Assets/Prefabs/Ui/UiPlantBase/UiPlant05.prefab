@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787248, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: nameUiPlant
-      value: 4
+      value: plant5
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787248, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: uiPlantPrefab
@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787249, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 60
+      value: 1025
       objectReference: {fileID: 0}
     - target: {fileID: 2847895183279787249, guid: afaccebda610acb429e87ac668dbea0f, type: 3}
       propertyPath: m_LocalPosition.x

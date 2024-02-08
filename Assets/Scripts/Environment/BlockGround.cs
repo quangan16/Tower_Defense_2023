@@ -24,7 +24,7 @@ public class BlockGround : MonoBehaviour
         if (other.gameObject.CompareTag("Hero") /*&& !GameManager.Instance.isFighting*/)
         {
             aboveObjs.Remove(other.gameObject);
-            if (aboveObjs.Count == 0)
+            if (aboveObjs.Count == 0 && PathFinding.grid[x, y] == 1)
             {
                 UpdatePathFinding();
                 PathFinding.Instance.ChangeValueZero();

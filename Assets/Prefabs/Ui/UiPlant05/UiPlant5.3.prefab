@@ -12,6 +12,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4958099257742680000, guid: 21f2b1e85f92a8947ae999f557358d8a, type: 3}
+      propertyPath: nameUiPlant
+      value: plant5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958099257742680000, guid: 21f2b1e85f92a8947ae999f557358d8a, type: 3}
       propertyPath: uiPlantPrefab
       value: 
       objectReference: {fileID: 2894344898470445345, guid: cdc74a3a74a700d4abaa0d3543bb926d, type: 3}

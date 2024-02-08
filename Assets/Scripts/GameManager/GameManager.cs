@@ -43,8 +43,10 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+       
         enemySpawned = new List<GameObject>();
         uiManagerInGame = UiManagerInGame.instance;
+        uiManagerInGame.DisplayEnemiesNextWave();
         uiManagerInGame.UpdateGateText();
         maxLive = live;
         DataPersist.playerData.SubAmountHeart(5);
@@ -55,12 +57,12 @@ public class GameManager : MonoBehaviour
         if (Time.timeScale == 1)
         {
             Time.timeScale = 2;
-            uiManagerInGame.SetTextSpeed("2X");
+            uiManagerInGame.SetTextSpeed("x2");
         }
         else
         {
             Time.timeScale = 1;
-            uiManagerInGame.SetTextSpeed("1X");
+            uiManagerInGame.SetTextSpeed("x1");
         }
     }
     public void OnSpawnWave()
@@ -144,6 +146,8 @@ public class GameManager : MonoBehaviour
                         StopAllCoroutines();
                         countEnemySpawned = 0;
                     }
+
+                    uiManagerInGame.DisplayEnemiesNextWave();
                     uiManagerInGame.UpdateWaveCountText(waveCount);
                     UiManagerInGame.instance.UpdateCoinText(10);
                     FightingPanel(false);

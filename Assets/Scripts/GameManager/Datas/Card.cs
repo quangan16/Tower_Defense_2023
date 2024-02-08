@@ -38,7 +38,7 @@ public class Card
     {
         atk += 1;
         attackSpeed += 0.01f;
-        range *= 1.01f;
+        range *= 1.001f;
         level++;
         SaveData();
     }

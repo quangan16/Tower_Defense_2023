@@ -164,12 +164,4 @@ public class EnemyBase : MonoBehaviour
     }
 }
 
-public enum EnemyState
-{
-    NORMAL,
-    SLOW,
-    POISONED,
-    FROZEN
-    
-    
-}
+

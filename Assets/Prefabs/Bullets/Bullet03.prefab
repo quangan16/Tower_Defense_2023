@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4935512997116423340, guid: 857260e65a9ff5c40a75d16a99ce3fa8, type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7194610775698375296, guid: 857260e65a9ff5c40a75d16a99ce3fa8, type: 3}
       propertyPath: m_Name
       value: Bullet03
@@ -14,6 +18,18 @@ PrefabInstance:
     - target: {fileID: 7194610775698375297, guid: 857260e65a9ff5c40a75d16a99ce3fa8, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194610775698375297, guid: 857260e65a9ff5c40a75d16a99ce3fa8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194610775698375297, guid: 857260e65a9ff5c40a75d16a99ce3fa8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194610775698375297, guid: 857260e65a9ff5c40a75d16a99ce3fa8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 7194610775698375297, guid: 857260e65a9ff5c40a75d16a99ce3fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,6 +71,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7194610775698375297, guid: 857260e65a9ff5c40a75d16a99ce3fa8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7194610776410707702, guid: 857260e65a9ff5c40a75d16a99ce3fa8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -90,6 +110,6 @@ MonoBehaviour:
   isSetted: 0
   pointStart: {x: 0, y: 0, z: 0}
   rb: {fileID: 4750384988360045699}
-  enemyMovement: {fileID: 0}
+  enemyController: {fileID: 0}
   a: 0
   radius: 0

@@ -128,6 +128,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5894824806250335413}
     - target: {fileID: 5307263886908117869, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
+      propertyPath: levelTxt
+      value: 
+      objectReference: {fileID: 8538903413014100163}
+    - target: {fileID: 5307263886908117869, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
       propertyPath: cardPlantScriptable
       value: 
       objectReference: {fileID: 11400000, guid: 1736210fcc009064a97787a8bdea6e14, type: 2}
@@ -154,5 +158,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8538903413014100163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7690912240880284885, guid: 6cb57a6ed70e8d7459c7515f4c203f7a, type: 3}
+  m_PrefabInstance: {fileID: 2034462127259651094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: level
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4958099257742680000, guid: e8ed0543b7739a642a8d96b7db308211, type: 3}
+      propertyPath: nameUiPlant
+      value: plant4.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4958099257742680001, guid: e8ed0543b7739a642a8d96b7db308211, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class UiManagerInGame : MonoBehaviour
 {
@@ -18,17 +21,22 @@ public class UiManagerInGame : MonoBehaviour
 
     public TextMeshProUGUI liveText;
 
+    public GameObject panelInfo;
     //Panel.
     public GameObject fightingPanel;
     public GameObject gameOverPanel;
     public GameObject gameVictoryPanel;
-
+    public Image[] dangerIcons;      
+    
+    private List<GameObject> enemyActiveIcons;
+   
     //public GameObject iconGate;
 
 
     public GameObject[] panelWarning;
     private void Awake()
     {
+        enemyActiveIcons = new List<GameObject>();
         if (instance != null)
         {
             Destroy(gameObject);
@@ -42,6 +50,7 @@ public class UiManagerInGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         gameManager = GameManager.Instance;
         coinText.text = gameManager.coin.ToString();
         liveText.text = gameManager.live + "/" + gameManager.maxLive;
@@ -100,16 +109,19 @@ public class UiManagerInGame : MonoBehaviour
             if (gameManager.waves[gameManager.waveCount - 1].gates[j])
             {
                 SetGateText(j, "X");
+                FadeInOutEfx(dangerIcons[j]);
                 //iconGate.SetActive(true);
             }
             else
             {
+                
                 int count = 1;
                 for (int i = gameManager.waveCount; i < gameManager.waves.Count; i++)
                 {
                     if (!gameManager.waves[i].gates[j])
                     {
                         count++;
+                        dangerIcons[j].transform.DOKill();
                     }
                     else
                     {
@@ -122,6 +134,52 @@ public class UiManagerInGame : MonoBehaviour
         }
     }
 
+    public void DisplayEnemiesNextWave()
+    {
+        if (enemyActiveIcons.Count > 0)
+        {
+            foreach (GameObject go in enemyActiveIcons)
+            {
+                ObjectPool.instance.Return(go);
+            }
+        }
+        Dictionary<int, int> enemyDic = new Dictionary<int, int>();
+        foreach (var id in gameManager.waves[gameManager.waveCount - 1].enemies)
+        {
+            if (enemyDic.ContainsKey((id)))
+            {
+                enemyDic[id]++;
+            }
+            else
+            {
+                enemyDic[id] = 1;
+            }
+        }
+        
+        foreach (var pair in enemyDic)
+        {
+            GameObject newIcon =
+                ObjectPool.instance.GetFromObjectPool(ObjectPool.instance.enemiesIcons[pair.Key], panelInfo.transform.position);
+            newIcon.transform.SetParent(panelInfo.transform, false);
+            newIcon.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "x" + enemyDic[pair.Key].ToString();
+            enemyActiveIcons.Add(newIcon);
+
+        }
+    }
+    
+    public void ToggleWaveInfo()
+    {
+        if (panelInfo.activeSelf == false)
+        {
+            panelInfo.SetActive(true);
+        }
+        else
+        {
+            panelInfo.SetActive((false));
+        }
+    }
+    
+
     public void ShowWarning(int index)
     {
         if (panelWarning[index].activeSelf)
@@ -132,6 +190,12 @@ public class UiManagerInGame : MonoBehaviour
         {
             panelWarning[index].SetActive(true);
         }
+    }
+
+    public void FadeInOutEfx(Image image)
+    {
+        image.color = new Color(1,1,1,0.0f);
+        image.DOFade(1.0f, 2.0f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
     }
 
 }

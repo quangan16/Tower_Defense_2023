@@ -37,8 +37,13 @@ public class Bullet : MonoBehaviour
         {
             HitTarget();
         }
-        Vector3 direction = target.position - transform.position;
-        rb.velocity = direction.normalized * speed;
+
+        if (target != null)
+        {
+            Vector3 direction = target.position - transform.position;
+            rb.velocity = direction.normalized * speed;
+        }
+        
     }
 
     private void Update()

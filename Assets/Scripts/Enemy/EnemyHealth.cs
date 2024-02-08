@@ -15,20 +15,28 @@ public class EnemyHealth : MonoBehaviour
     public EnemyController enemyController;
     public bool takeDamage = false;
     public EnemyAnimation enemyAnimation;
-    public EnemyState enemyState;
     public BoxCollider boxCollider;
 
     public virtual void OnEnable()
     {
+        
         SetValue();
     }
     
     public void SetValue()
     {
         healthText.gameObject.SetActive(true);
-        int maxHealth1 = GameManager.Instance.waveCount * maxHealth;
         boxCollider.enabled = true;
-        SetMaxHealth(maxHealth1);
+        if (PlayerPrefs.HasKey("COMPLETETUTORIAL"))
+        {
+            SetMaxHealth(GameManager.Instance.waveCount * maxHealth);
+        }
+        else
+        {
+            SetMaxHealth(maxHealth);
+        }
+      
+        
     }
 
     public virtual void SetMaxHealth(int value)
@@ -61,7 +69,7 @@ public class EnemyHealth : MonoBehaviour
         if (!enemyController.dead)
         {
             health -= damage;
-            enemyAnimation.blinkTimer = enemyAnimation.blinkDuration;
+            StartCoroutine(enemyAnimation.Blink());
             AudioManager.instance.PlayShot("ZombieBaby", 0);
             UpdateHealthText();
             UpdateHealthBar();
@@ -90,10 +98,9 @@ public class EnemyHealth : MonoBehaviour
     {
         if (poisonCoroutine != null)
             StopCoroutine(poisonCoroutine); // Stop the ongoing OnPoinsoned coroutine
-
-        enemyAnimation.OnNormal();
+        
         enemyAnimation.OnPoisoned();
-        enemyState = EnemyState.POISONED;
+        enemyController.enemyState = EnemyState.POISONED;
 
         // Start the new OnPoinsoned coroutine and store its reference
         poisonCoroutine = StartCoroutine(OnPoisoned(poisonDamage, index, duration));
@@ -102,17 +109,15 @@ public class EnemyHealth : MonoBehaviour
         
        
         enemyAnimation.OnNormal();
-        enemyState = EnemyState.NORMAL;
+        enemyController.enemyState = EnemyState.NORMAL;
     }
 
     public IEnumerator OnPoisoned(int poisonDamage, int index, float duration)
     {
         while (true)
         {
-            if (enemyState == EnemyState.POISONED && !enemyController.dead)
+            if (enemyController.enemyState == EnemyState.POISONED && !enemyController.dead)
             {
-
-
                 health -= poisonDamage;
                 enemyAnimation.blinkTimer = enemyAnimation.blinkDuration;
                 AudioManager.instance.PlayShot("ZombieBaby", 0);

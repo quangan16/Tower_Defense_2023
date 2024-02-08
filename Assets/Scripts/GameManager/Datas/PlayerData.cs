@@ -29,25 +29,62 @@ public class PlayerData
     public void InitCardsBattle()
     {
         cardsBattle = new List<Card>();
-        for (int i = 0; i < 3; i++)
+        foreach  (Card card in cardsCollection)
         {
-            cardsBattle.Add(cardsCollection[i]);
+            cardsBattle.Add(card);
         }
     }
     public void InitCardsCollection()
     {
-        cardsCollection = new List<Card>();
-        Card plant01 = new Card("plant1", 1, 100, 2, 2.5f, "PeaShooter", "Common", "Single target");
-        Card plant02 = new Card("plant2", 1, 50, 1, 3.5f, "Shroom", "Common", "Five direction");
-        Card plant03 = new Card("plant3", 1, 200, 1, 2.5f, "Apple", "Common", "Go through enemies");
-        Card plant04 = new Card("plant4", 1, 300, 1.5f, 2.5f, "Cannon Boom", "Common", "Explode with radius");
-        Card plant05 = new Card("plant5", 1, 300, 1.5f, 2.5f, "FreezeMachine", "Common", "Slow sown target");
+        cardsCollection = new List<Card>()
+        {
+            new Card("plant1.0", 1, 50, 0.8f, 2.0f, "PeaShooter", "Common", "Single target"),
+            new Card("plant1.1", 2, 80, 1.0f, 2.25f, "PeaShooter", "Common", "Single target"),
+            new Card("plant1.2", 3, 160, 1.2f, 2.25f, "PeaShooter", "Common", "Single target"),
+            new Card("plant1.3", 4, 220, 1.6f, 2.5f, "PeaShooter", "Common", "Single target"),
+            new Card("plant1.4", 5, 320, 2.0f, 2.5f, "PeaShooter", "Common", "Single target"),
+            
+            new Card("plant2.0", 1, 30, 0.8f, 2.0f, "Shroom", "Common", "Five direction"),
+            new Card("plant2.1", 2, 50, 1, 2.0f, "Shroom", "Common", "Five direction"),
+            new Card("plant2.2", 3, 80, 1.2f, 2.0f, "Shroom", "Common", "Five direction"),
+            new Card("plant2.3", 4, 140, 1.2f, 2.5f, "Shroom", "Common", "Five direction"),
+            new Card("plant2.4", 5, 200, 1.4f, 2.5f, "Shroom", "Common", "Five direction"),
+            
+            new Card("plant3.0", 1, 40, 0.8f, 2.5f, "Apple", "Common", "Go through enemies"),
+            new Card("plant3.1", 2, 80, 0.8f, 2.5f, "Apple", "Common", "Go through enemies"),
+            new Card("plant3.2", 3, 100, 1, 2.5f, "Apple", "Common", "Go through enemies"),
+            new Card("plant3.3", 4, 120, 1.2f, 2.75f, "Apple", "Common", "Go through enemies"),
+            new Card("plant3.4", 5, 260, 1.5f, 3.0f, "Apple", "Common", "Go through enemies"),
+            
+            new Card("plant4.0", 1, 80,  0.6f, 2.5f, "Cannon Boom", "Common", "Explode with radius"),
+            new Card("plant4.1", 2, 120, 0.7f, 2.5f, "Cannon Boom", "Common", "Explode with radius"),
+            new Card("plant4.2", 3, 160, 0.8f, 2.5f, "Cannon Boom", "Common", "Explode with radius"),
+            new Card("plant4.3", 4, 280, 0.9f, 3f, "Cannon Boom", "Common", "Explode with radius"),
+            new Card("plant4.4", 5, 420, 1.0f, 3.25f, "Cannon Boom", "Common", "Explode with radius"),
+            
+            new Card("plant5.0", 1, 40, 1.0f, 2.5f, "FreezeMachine", "Common", "Slow sown target"),
+            new Card("plant5.1", 2, 60, 1.3f, 2.5f, "FreezeMachine", "Common", "Slow sown target"),
+            new Card("plant5.2", 3, 120, 1.5f, 2.5f, "FreezeMachine", "Common", "Slow sown target"),
+            new Card("plant5.3", 4, 180, 1.5f, 2.5f, "FreezeMachine", "Common", "Slow sown target"),
+            new Card("plant5.4", 5, 260, 1.8f, 2.5f, "FreezeMachine", "Common", "Slow sown target"),
+        };
+        // Card plant10 = new Card("plant1.0", 1, 100, 2, 2.0f, "PeaShooter", "Common", "Single target");
+        // Card plant11 = new Card("plant1.0", 1, 100, 2, 2.0f, "PeaShooter", "Common", "Single target");
+        // Card plant12 = new Card("plant1.0", 1, 100, 2, 2.0f, "PeaShooter", "Common", "Single target");
+        // Card plant13 = new Card("plant1.0", 1, 100, 2, 2.0f, "PeaShooter", "Common", "Single target");
+        // Card plant14 = new Card("plant1.0", 1, 100, 2, 2.0f, "PeaShooter", "Common", "Single target");
+        //
+        // Card plant20 = new Card("plant2.0", 1, 50, 1, 3.5f, "Shroom", "Common", "Five direction");
+        // Card plant21 = new Card("plant2.0", 1, 50, 1, 3.5f, "Shroom", "Common", "Five direction");
+        // Card plant22 = new Card("plant2.0", 1, 50, 1, 3.5f, "Shroom", "Common", "Five direction");
+        // Card plant23 = new Card("plant2.0", 1, 50, 1, 3.5f, "Shroom", "Common", "Five direction");
+        // Card plant24 = new Card("plant2.0", 1, 50, 1, 3.5f, "Shroom", "Common", "Five direction");
+        //
+        // Card plant30 = new Card("plant3.0", 1, 200, 1, 2.5f, "Apple", "Common", "Go through enemies");
+        // Card plant40 = new Card("plant4.0", 1, 300, 1.5f, 2.5f, "Cannon Boom", "Common", "Explode with radius");
+        // Card plant50 = new Card("plant5.0", 1, 300, 1.5f, 2.5f, "FreezeMachine", "Common", "Slow sown target");
 
-        cardsCollection.Add(plant01);
-        cardsCollection.Add(plant02);
-        cardsCollection.Add(plant03);
-        cardsCollection.Add(plant04);
-        cardsCollection.Add(plant05);
+        
     }
 
     //get and set heart.

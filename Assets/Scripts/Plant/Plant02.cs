@@ -23,7 +23,7 @@ public class Plant02 : PlantBase
             if (fireCountdown <= 0)
             {
                 animationPlant.ChangeAnimationState("attack", 0.08f, 0, 0.65f);
-                Invoke("Shoot", 0);
+                Invoke("Shoot", 0.25f);
                 //Invoke("Shoot", 1.2f/attackSpeed);
                 
                 fireCountdown = 1 / attackSpeed;
@@ -39,7 +39,10 @@ public class Plant02 : PlantBase
             {
                 gas.Play();
                 enemyColliders[i].GetComponent<EnemyHealth>().TakeDamage(atk, 1);
-                enemyColliders[i].GetComponent<EnemyHealth>().TakePoisoned1(10, 2, 2.0f);
+                if (!enemyColliders[i].gameObject.name.Contains("Enemy03") && level > 0)
+                {
+                    enemyColliders[i].GetComponent<EnemyHealth>().TakePoisoned1(10, 2, 2.0f);
+                }
                 enemyColliders[i].gameObject.GetComponent<EnemyHealth>().takeDamage = true;
                 enemies.Remove(enemyColliders[i].gameObject);
             }
@@ -68,10 +71,8 @@ public class Plant02 : PlantBase
 
     public void Shoot()
     {
-      
-       
         Attack();
-    
-        animationPlant.ChangeAnimationState("idle", 0.25f, 0, 0f);
+        Invoke(nameof(DelayIdleAnimation), 0.5f / attackSpeed);
+       
     }
 }

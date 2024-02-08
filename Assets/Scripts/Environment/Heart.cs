@@ -10,6 +10,12 @@ public class Heart : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             GameManager gameManager = GameManager.Instance;
+            
+            if (DataPersist.onHaptic)
+            {
+                Handheld.Vibrate();
+            }
+          
             if(gameManager.live > 1)
             {
                 gameManager.live--;

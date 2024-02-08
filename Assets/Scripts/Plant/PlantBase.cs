@@ -36,15 +36,21 @@ public class PlantBase : MonoBehaviour, IShootable
         fireCountdown = 0;
         createdUi = false;
         LoadDataPlant();
+        // Debug.Log(atk);
     }
 
+    // public void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.yellow;
+    //     Gizmos.DrawWireSphere(transform.position, range);
+    // }
     public void LoadDataPlant()
     {
         foreach (Card plant in DataPersist.playerData.cardsBattle)
         {
             if (namePlant.CompareTo(plant.id) == 0)
             {
-                Debug.Log(plant.range);
+                // Debug.Log(plant.range);
                 atk = plant.atk;
                 attackSpeed = plant.attackSpeed;
                 range = plant.range;
@@ -129,9 +135,9 @@ public class PlantBase : MonoBehaviour, IShootable
     {
         if (!target.GetComponent<EnemyController>().dead)
         {
-            animationPlant.ChangeAnimationState("attack", 0.2f, 0, 0.45f);
+            animationPlant.ChangeAnimationState("attack", 0.1f, 0, 0.45f);
             animationPlant.EmitParticle();
-            Invoke(nameof(DelayAnimationAttack), 0.2f / attackSpeed);
+            Invoke(nameof(DelayAnimationAttack), 0.0f / attackSpeed);
         }
     }
 
@@ -146,7 +152,7 @@ public class PlantBase : MonoBehaviour, IShootable
             bullet.atk = atk;
             PlaySfx(0);
         }
-        Invoke(nameof(DelayIdleAnimation), 0.5f / attackSpeed);
+        Invoke(nameof(DelayIdleAnimation), 0.1f / attackSpeed);
     }
 
     public virtual void PlaySfx(int index)

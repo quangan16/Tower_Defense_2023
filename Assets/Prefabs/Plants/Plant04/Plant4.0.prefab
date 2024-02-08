@@ -399,6 +399,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5620559400371217893, guid: 7f12dad0b9f6fe74691749115d73ac59, type: 3}
+      propertyPath: namePlant
+      value: plant4.0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5620559400371217893, guid: 7f12dad0b9f6fe74691749115d73ac59, type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 5565283723475319120, guid: 7b3b778019b7c1944a793ac83ce74d70, type: 3}

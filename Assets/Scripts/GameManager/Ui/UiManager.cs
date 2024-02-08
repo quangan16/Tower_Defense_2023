@@ -164,8 +164,10 @@ public class UiManager : MonoBehaviour
     }
     public void ShowPanelCardInfor(string id, Sprite image)
     {
+       
         popUpCardInfo.SetActive(true);
         loadCardInfo.LoadCardData(id, image);
+        
     }
 
     public void UpdateCardLevel(int level)

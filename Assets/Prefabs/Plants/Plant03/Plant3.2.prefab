@@ -94,6 +94,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2004686954945280604, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
+      propertyPath: iconSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8f48848562360a345a55758535942053, type: 3}
     - target: {fileID: 2875806599323650142, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
       propertyPath: animator
       value: 
@@ -144,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 2744584363042203826}
     - target: {fileID: 6082683075714193223, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
       propertyPath: namePlant
-      value: 2
+      value: plant3.2
       objectReference: {fileID: 0}
     - target: {fileID: 6082683075714193223, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
       propertyPath: turnSpeed

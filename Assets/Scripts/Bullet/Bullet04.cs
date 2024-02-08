@@ -22,7 +22,10 @@ public class Bullet04 : Bullet
         {
             other.gameObject.GetComponent<EnemyHealth>().TakeDamage(atk, 1);
             other.gameObject.GetComponent<EnemyHealth>().takeDamage = true;
-            other.gameObject.GetComponent<EnemyController>().GetSlowed(1 - slowRate, slowDuration);
+            if (!other.gameObject.name.Contains("Enemy03"))
+            {
+                other.gameObject.GetComponent<EnemyController>().GetSlowed(slowRate, slowDuration);
+            }
             ObjectPool.instance.Return(gameObject);
         }
     }

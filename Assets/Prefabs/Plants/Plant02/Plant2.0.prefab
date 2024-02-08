@@ -91,8 +91,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6299636652761993636, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
-      propertyPath: range
-      value: 1
+      propertyPath: namePlant
+      value: plant2.0
       objectReference: {fileID: 0}
     - target: {fileID: 40007313721241357, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: lengthInSec

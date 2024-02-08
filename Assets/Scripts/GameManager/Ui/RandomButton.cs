@@ -19,7 +19,7 @@ public class RandomButton : MonoBehaviour
                 int index = Random.Range(0, 5);
                 GameObject ui = Instantiate(uiPlantSlot[index],pos.transform);
                 ui.transform.SetParent(childTransform);
-                ui.transform.localScale = Vector3.one;
+                
                 return;
             }
         }

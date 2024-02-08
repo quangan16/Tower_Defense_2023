@@ -43355,6 +43355,22 @@ PrefabInstance:
       propertyPath: description
       value: Five direction.
       objectReference: {fileID: 0}
+    - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_Size.x
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_Size.y
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_Size.z
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690991165927251489, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
+      propertyPath: m_Center.y
+      value: 0.32
+      objectReference: {fileID: 0}
     - target: {fileID: 7629231065534399732, guid: 2953ab3f460e06b459fa23b18f74e118, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -43413,7 +43429,7 @@ MonoBehaviour:
   index: 1
   atk: 25
   attackSpeed: 1
-  range: 2.5
+  range: 2
   objRange: {fileID: 8979396953281427979}
   fireCountdown: 0
   target: {fileID: 0}

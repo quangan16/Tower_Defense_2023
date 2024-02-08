@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 1224959434234903155}
     - target: {fileID: -6299636652761993636, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: namePlant
-      value: plant2
+      value: plant2.2
       objectReference: {fileID: 0}
     - target: {fileID: -6299636652761993636, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: attackSpeed
@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041180703336044538, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5cebe75c267cfa438a0b85c570f0989, type: 3}

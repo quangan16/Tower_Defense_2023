@@ -25,7 +25,9 @@ public class LoadCardInfo : MonoBehaviour
             {
                 id = card.id;
                 namePlant.SetText(card.name);
+                level.SetText(card.level.ToString());
                 icon.sprite = image;
+                icon.GetComponent<Image>().preserveAspect = true;
                 popularLevel.SetText(card.popular);
                 description.SetText(card.description);
                 LoadCardData();

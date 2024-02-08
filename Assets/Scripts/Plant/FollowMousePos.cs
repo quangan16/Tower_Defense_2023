@@ -6,6 +6,7 @@ using System.Reflection;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FollowMousePos : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class FollowMousePos : MonoBehaviour
     public bool onDrag = false;
     public Transform otherTransform;
     public GameObject otherObj;
+    public static string nameID;
+    public ParticleSystem upgradablePar;
 
     public GameObject shadow;
     private GameObject shadowObj;
@@ -34,6 +37,9 @@ public class FollowMousePos : MonoBehaviour
     [SerializeField] private ParticleSystem vfxMerge;
 
     private UiManagerInGame uiManagerInGame;
+
+    public static UnityAction onHolding;
+    public static UnityAction offHolding;
 
     private void OnEnable()
     {
@@ -49,8 +55,32 @@ public class FollowMousePos : MonoBehaviour
         inputManager = GameObject.Find("InputManager").GetComponent<InputManager>();
         grid = inputManager.grid;
         heroRange.OnMaterial();
+        onHolding += DisplayUpgradablePlants;
+        offHolding += DisableEffect;
     }
 
+    private void OnDisable()
+    {
+        onHolding -= DisplayUpgradablePlants;
+        offHolding -= DisableEffect;
+    }
+
+    public void DisplayUpgradablePlants()
+    {
+        if (nameID.CompareTo(plantBase.namePlant) == 0 )
+        {
+            upgradablePar.Play();
+        }
+    }
+
+    public void DisableEffect()
+    {
+        if (upgradablePar != null && upgradablePar.isPlaying)
+        {
+            upgradablePar.Stop();
+        }
+    }
+    
     private void Update()
     {
         DragFromUI();
@@ -93,8 +123,11 @@ public class FollowMousePos : MonoBehaviour
 
     private void OnMouseDown()
     {
+        nameID = plantBase.namePlant;
+        
         if (!PanelWarninging())
         {
+            onHolding?.Invoke();
             heroRange.OnMaterial();
             shadowObj = Instantiate(shadow, transform.position, Quaternion.identity);
         }
@@ -117,6 +150,8 @@ public class FollowMousePos : MonoBehaviour
 
     private void OnMouseUp()
     {
+        nameID = null;
+        offHolding?.Invoke();
         if (otherTransform != null)
         {
             otherTransform.position = prePos;
@@ -226,6 +261,7 @@ public class FollowMousePos : MonoBehaviour
             collided = false;
             SetRightPlace(true);
         }
+       
 
 
         if (other.gameObject.CompareTag("Bound"))

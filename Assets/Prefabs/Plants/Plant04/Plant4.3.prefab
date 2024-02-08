@@ -111,6 +111,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7382419642121308145}
     - target: {fileID: -5620559400371217893, guid: 7f12dad0b9f6fe74691749115d73ac59, type: 3}
+      propertyPath: namePlant
+      value: plant4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5620559400371217893, guid: 7f12dad0b9f6fe74691749115d73ac59, type: 3}
       propertyPath: turnSpeed
       value: 10
       objectReference: {fileID: 0}
@@ -228,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041180703336044538, guid: 7f12dad0b9f6fe74691749115d73ac59, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f12dad0b9f6fe74691749115d73ac59, type: 3}

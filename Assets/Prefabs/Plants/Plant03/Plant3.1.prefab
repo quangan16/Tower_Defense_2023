@@ -94,6 +94,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2004686954945280604, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
+      propertyPath: iconSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 14c43d4199d096a44a4779bb3dc90d44, type: 3}
+    - target: {fileID: 2875806599323650142, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 4930519074099884778}
     - target: {fileID: 5775972249903400577, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -101,6 +109,10 @@ PrefabInstance:
     - target: {fileID: 6082683075714193223, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
       propertyPath: atk
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082683075714193223, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
+      propertyPath: namePlant
+      value: plant3.1
       objectReference: {fileID: 0}
     - target: {fileID: 6082683075714193223, guid: 230bfd853403eb743a55a4a22dea42d9, type: 3}
       propertyPath: attackSpeed
